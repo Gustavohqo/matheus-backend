@@ -39,7 +39,7 @@ namespace Siteware.Api
                     {
                         builder.AllowAnyMethod();
                         builder.AllowAnyHeader();
-                        builder.WithOrigins("http://localhost:4200", "https://eager-villani-475d0b.netlify.app");
+                        builder.WithOrigins("http://localhost:4200", "https://ecstatic-austin-ed38f4.netlify.app/");
                     });
             });
 
