@@ -27,8 +27,15 @@ namespace Siteware.Domain.Core.Services
         {
             var cart = _cartRepository.Get(id);
             cart.ProductsCart.ToList().ForEach((productCart) => {
-                productCart.FinalPrice = _productPriceService.GetProductPrice(productCart);
-                productCart.AppliedSale = productCart.Quantity * productCart.Product.Price != productCart.FinalPrice;
+                if (productCart.Product.Sale != null)
+                {
+                    productCart.FinalPrice = _productPriceService.GetProductPrice(productCart);
+                    productCart.AppliedSale = productCart.Quantity * productCart.Product.Price != productCart.FinalPrice;
+                } else
+                {
+                    productCart.FinalPrice = productCart.Quantity * productCart.Product.Price;
+                    productCart.AppliedSale = false;
+                }
                 cart.Price += productCart.FinalPrice;
             });
             return cart;

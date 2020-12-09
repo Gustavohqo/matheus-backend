@@ -12,10 +12,7 @@ namespace Siteware.Application.Dtos
         [Required(ErrorMessage = "CategoryId is Required")]
         [DisplayName("CategoryId")]
         public int CategoryId { get; set; }
-
-        [Required(ErrorMessage = "SaleId is Required")]
-        [DisplayName("SaleId")]
-        public int SaleId { get; set; }
+        public int? SaleId { get; set; }
 
         [Required(ErrorMessage = "Name is Required")]
         [DisplayName("Name")]
