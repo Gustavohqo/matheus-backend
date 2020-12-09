@@ -15,13 +15,11 @@ O Backend foi desenvolvido em .NET Core 3.1, utilizando DDD, DI, Inversion of Co
   - Infra Data
     - Camada responsavel por mediar o acesso a dados
 
-A ferramenta de teste utilizada é o Xunit, sendo que toda camada de dominio que contem as regras de negocio da aplicação está coberta.
-
 ### Run Application
 
 
 ```sh
-$ cd uol-edtech-backend
+$ cd siteware-backend
 $ dotnet build
 $ dotnet run
 ```
